@@ -49,6 +49,7 @@ npm run start
 
 - Typescript
 - Node/Express
+(- Librairie PDFKit)
 - PostgreSQL (Hébergé donc le projet nécessite une connexion internet)
 
 ## Auteur
