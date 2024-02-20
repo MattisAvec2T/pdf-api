@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../assets/styles/form.css" />
+    <title>Création de lettre</title>
+  </head>
+  <body>
+    <main>
+      <form id="letter-form" class="letter-form">
+        <div id="entity-container" class="form-entity-container">
+          <fieldset id="sender-infos" class="form-entity-infos">
+            <h2>Expéditeur</h2>
+            <div class="input-wrap">
+              <label for="sender-name"
+                >Nom de l'expéditeur<strong>*</strong></label
+              >
+              <input
+                id="sender-name"
+                name="sender-name"
+                placeholder="Lefort SAS"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="sender-service">Service</label>
+              <input
+                id="sender-service"
+                name="sender-service"
+                placeholder="Ressources Humaines"
+                autocomplete="off"
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="sender-address">Adresse</label>
+              <input
+                id="sender-address"
+                name="sender-address"
+                placeholder="39 Rue de la Folie Mericourt"
+                autocomplete="street-address"
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="sender-zipcode">Code postal</label>
+              <input
+                id="sender-zipcode"
+                name="sender-zipcode"
+                placeholder="75 011"
+                autocomplete="postal-code	"
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="sender-town">Ville</label>
+              <input id="sender-town" name="sender-town" placeholder="Paris" />
+            </div>
+            <div class="input-wrap">
+              <label for="sender-phone">Téléphone</label>
+              <input
+                id="sender-phone"
+                name="sender-phone"
+                placeholder="01 47 00 12 57"
+                autocomplete="tel"
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="sender-mail">E-mail</label>
+              <input
+                id="sender-mail"
+                name="sender-mail"
+                placeholder="lefort.sas@gmail.com"
+                autocomplete="email"
+              />
+            </div>
+          </fieldset>
+          <fieldset id="receiver-infos" class="form-entity-infos">
+            <h2>Destinataire</h2>
+            <div class="input-wrap">
+              <label for="receiver-name"
+                >Nom du destinataire<strong>*</strong></label
+              >
+              <input
+                id="receiver-name"
+                name="receiver-name"
+                placeholder="Vincent TESSIER-LABE"
+                required
+                autocomplete="name"
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="receiver-service">Service</label>
+              <input
+                id="receiver-service"
+                name="receiver-service"
+                placeholder="..."
+                autocomplete="off"
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="receiver-address">Adresse</label>
+              <input
+                id="receiver-address"
+                name="receiver-address"
+                placeholder="14 Rue Nantaise"
+                autocomplete="street-address"
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="receiver-zipcode">Code postal</label>
+              <input
+                id="receiver-zipcode"
+                name="receiver-zipcode"
+                placeholder="35 000"
+                autocomplete="postal-code"
+              />
+            </div>
+            <div class="input-wrap">
+              <label for="receiver-town">Ville</label>
+              <input
+                id="receiver-town"
+                name="receiver-town"
+                placeholder="Rennes"
+                autocomplete="off"
+              />
+            </div>
+          </fieldset>
+        </div>
+        <fieldset id="letter-container" class="form-letter-container">
+          <h2>Corps de la lettre</h2>
+          <div class="input-wrap">
+            <label for="letter-object">Objet<strong>*</strong></label>
+            <input
+              id="letter-object"
+              name="letter-object"
+              placeholder="Courrier Important"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="input-wrap">
+            <label for="letter-body">
+              Contenu de la lettre<strong>*</strong>
+            </label>
+            <textarea
+              rows="16"
+              id="letter-body"
+              name="letter-body"
+              placeholder="Cher Monsieur ..."
+              required
+            ></textarea>
+          </div>
+          <div class="input-wrap">
+            <button type="submit">Envoyer</button>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+  <script>
+    const letterApiDomain = "<%= letterApiDomain %>";
+  </script>
+  <script src="../assets/scripts/apiFunctions.js"></script>
+  <script src="../assets/scripts/form.js"></script>
+</html>
