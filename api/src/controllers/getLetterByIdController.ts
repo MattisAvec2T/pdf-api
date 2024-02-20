@@ -15,7 +15,7 @@ export default async function getAllLettersController(
       res.setHeader("Content-Type", "application/pdf");
       res.setHeader(
         "Content-Disposition",
-        `attachment; filename="letter_${response.sender_name}_${response.created_at}.pdf"` // response.created_at
+        `attachment; filename="letter_${response.sender_name}_${response.created_at}.pdf"`
       );
       res.status(200);
       doc.pipe(res);

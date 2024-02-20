@@ -2,7 +2,10 @@ import express, { Express } from "express";
 import dotenv from "dotenv";
 import { configureExpress } from "./config/express.config";
 import { setupRoutes } from "./routes";
-import { error404Middleware } from "./middlewares/errorHandler";
+import {
+  errorMiddleware,
+  error404Middleware,
+} from "./middlewares/errorHandler";
 
 dotenv.config();
 
@@ -10,6 +13,7 @@ dotenv.config();
 const app: Express = express();
 configureExpress(app);
 setupRoutes(app);
+app.use(errorMiddleware);
 app.use(error404Middleware);
 
 // Server start

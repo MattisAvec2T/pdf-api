@@ -61,7 +61,7 @@ export function createLetter(letterData: Letter): typeof PDFDocument {
     .text(senderInfoText.slice(letterData.sender_name.length));
   doc.moveDown();
 
-  // Receiver
+  // Receiver Infos
   let receiverInfoText = letterData.receiver_name;
   if (letterData.receiver_service) {
     receiverInfoText = `${receiverInfoText}\n${letterData.receiver_service}`;
