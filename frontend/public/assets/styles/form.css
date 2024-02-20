@@ -90,6 +90,13 @@ textarea {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+#char-count {
+  align-self: flex-end;
+  color: #1c1c1c44;
+  padding: 0 1.8em;
+  height: 0;
+  transform: translateY(-1.8em);
+}
 
 .letter-form * input,
 .letter-form * textarea {
@@ -108,5 +115,14 @@ textarea {
 .letter-form * button:hover {
   color: #ffffff;
   background-color: #2ea3f2d9;
-  border: none;
+}
+
+.show-history {
+  align-self: center;
+  color: #2ea3f2d9;
+  text-decoration: none;
+}
+.show-history:hover {
+  color: #2896df;
+  text-decoration: underline;
 }

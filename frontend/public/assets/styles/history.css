@@ -9,3 +9,79 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+
+h3 {
+  font-weight: 100;
+}
+
+main {
+  min-height: 100vh;
+  padding: 20px 10vw 30px;
+  background-color: #eff5ff;
+  display: flex;
+  gap: 1em;
+}
+
+.empty-letters-witness {
+  opacity: 0.6;
+}
+
+.letter-card {
+  background-color: #fdfdfd;
+  border: 0;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  padding: 1em 1.4em;
+  height: fit-content;
+  border-radius: 8px;
+}
+
+.letter-card-left {
+  flex: 1;
+  padding: 1em 1.4em 1em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.letter-card-left > .entity-infos {
+  display: flex;
+  gap: 1.4em;
+}
+.letter-card-left > .letter-object {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.letter-card-right {
+  padding-left: 1.4em;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 0.6em;
+  flex-direction: column;
+  justify-content: center;
+}
+.letter-card-right > button {
+  height: fit-content;
+  border-radius: 1.2em;
+  color: #f2f2f2;
+  padding: 0.4em 1.2em;
+  border: none;
+}
+.letter-card-right > button:hover {
+  color: #ffffff;
+}
+.download-btn {
+  background-color: #2ea3f2;
+}
+.download-btn:hover {
+  background-color: #2ea3f2d9;
+}
+.delete-btn {
+  background-color: #f22e2e;
+}
+.delete-btn:hover {
+  background-color: #f22e2ed9;
+}

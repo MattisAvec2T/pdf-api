@@ -1,0 +1,32 @@
+body,
+html {
+  font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
+  color: #1c1c1c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #eff5ff;
+}
+
+main > button#download-btn {
+  font-size: 1.5em;
+  padding: 0.4em 1.2em;
+  border: 2px solid #00000066;
+  border-radius: 1.2em;
+  color: #f2f2f2;
+  background-color: #2ea3f2;
+  border: none;
+}
+main > button#download-btn:hover {
+  color: #ffffff;
+  background-color: #2ea3f2d9;
+}

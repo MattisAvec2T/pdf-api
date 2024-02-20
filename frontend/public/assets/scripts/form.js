@@ -17,6 +17,14 @@ const isOfTypeLetter = (object) => {
         "letter_object" in object &&
         "letter_body" in object);
 };
+const textarea = document.querySelector("#letter-body");
+const charCount = document.querySelector("#char-count");
+if (textarea && charCount) {
+    textarea.addEventListener("input", function () {
+        const remainingChars = 800 - textarea.value.length;
+        charCount.textContent = `${remainingChars}`;
+    });
+}
 if (form) {
     form.addEventListener("submit", (e) => {
         e.preventDefault();

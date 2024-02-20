@@ -28,7 +28,6 @@ function handleDownloadLetter(id: number) {
     .then((blob) => {
       const downloadLink: HTMLAnchorElement = document.createElement("a");
       downloadLink.href = URL.createObjectURL(blob);
-      console.log(blob);
       downloadLink.download = `letter${id}`;
       downloadLink.click();
     })

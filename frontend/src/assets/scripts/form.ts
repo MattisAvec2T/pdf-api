@@ -22,6 +22,17 @@ const isOfTypeLetter = (object: any): object is Letter => {
   );
 };
 
+const textarea: HTMLTextAreaElement | null =
+  document.querySelector("#letter-body");
+const charCount: HTMLElement | null = document.querySelector("#char-count");
+
+if (textarea && charCount) {
+  textarea.addEventListener("input", function () {
+    const remainingChars = 800 - textarea.value.length;
+    charCount.textContent = `${remainingChars}`;
+  });
+}
+
 if (form) {
   form.addEventListener("submit", (e): void => {
     e.preventDefault();

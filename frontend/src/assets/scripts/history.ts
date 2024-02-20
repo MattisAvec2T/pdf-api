@@ -5,7 +5,7 @@ function handleDeleteLetter(id: number) {
     .then((response) => {
       // if the response sends an id, the letter was deleted
       if ("id" in response) {
-        window.location.href = `download/${response.id}`;
+        window.location.reload();
       } else {
         console.error("Request to Database Failed");
         alert(`Request to Database Failed.\nPress OK to Refresh`);
@@ -35,13 +35,13 @@ function generateDOMElements(letters: Letter[]): void {
       const entityInfos: HTMLElement = document.createElement("div");
       entityInfos.classList.add("entity-infos");
       entityInfos.innerHTML = `
-        <h3 class="sender-name">${letter.sender_name}</h3>
-        <h3 class="receiver-name">${letter.receiver_name}</h3>
+        <h3 class="sender-name"><strong>Expéditeur : </strong> ${letter.sender_name}</h3>
+        <h3 class="receiver-name"><strong>Destinataire : </strong> ${letter.receiver_name}</h3>
       `;
       const letterObject: HTMLElement = document.createElement("div");
       letterObject.classList.add("letter-object");
       letterObject.innerHTML = `
-        <h3 class="letter-object-title">Objet</h3>
+        <h3 class="letter-object-title"><strong>Objet</strong></h3>
         <p class="letter-object-content">${letter.letter_object}</p>
       `;
       const letterCardLeft: HTMLElement = document.createElement("div");
@@ -79,8 +79,6 @@ function generateDOMElements(letters: Letter[]): void {
 
 sendApiGetRequest(letterApiDomain)
   .then((response) => {
-    console.log("Réponse de l'API :");
-    console.log(response);
     if (response.constructor === Array) {
       generateDOMElements(response);
     }
