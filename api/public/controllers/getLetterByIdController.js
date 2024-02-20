@@ -19,8 +19,7 @@ function getAllLettersController(req, res, next) {
             if (response) {
                 const doc = (0, generatePDF_1.createLetter)(response);
                 res.setHeader("Content-Type", "application/pdf");
-                res.setHeader("Content-Disposition", `attachment; filename="letter_${response.sender_name}_${response.created_at}.pdf"` // response.created_at
-                );
+                res.setHeader("Content-Disposition", `attachment; filename="letter_${response.sender_name}_${response.created_at}.pdf"`);
                 res.status(200);
                 doc.pipe(res);
                 doc.end();

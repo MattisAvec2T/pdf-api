@@ -13,6 +13,7 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 (0, express_config_1.configureExpress)(app);
 (0, routes_1.setupRoutes)(app);
+app.use(errorHandler_1.errorMiddleware);
 app.use(errorHandler_1.error404Middleware);
 // Server start
 const HOST = process.env.HOST || "http://localhost";

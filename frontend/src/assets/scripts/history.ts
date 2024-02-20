@@ -3,10 +3,14 @@ const main: HTMLElement | null = document.querySelector("main");
 function handleDeleteLetter(id: number) {
   sendApiDeleteRequest(`${letterApiDomain}/${id}`)
     .then((response) => {
-      console.log(`${letterApiDomain}/${id}`);
-      console.log("Réponse de l'API :");
-      console.log(response);
-      // redirect
+      // if the response sends an id, the letter was deleted
+      if ("id" in response) {
+        window.location.href = `download/${response.id}`;
+      } else {
+        console.error("Request to Database Failed");
+        alert(`Request to Database Failed.\nPress OK to Refresh`);
+        window.location.reload();
+      }
     })
     .catch((error: Error) => {
       console.error("Erreur lors de la connexion à l'API :", error);
@@ -20,8 +24,11 @@ function handleDeleteLetter(id: number) {
 function generateDOMElements(letters: Letter[]): void {
   if (main) {
     if (letters.length === 0) {
-      // affiche "Vide"
-      return;
+      const emptyArrayWitness: HTMLParagraphElement =
+        document.createElement("p");
+      emptyArrayWitness.classList.add("empty-letters-witness");
+      emptyArrayWitness.innerText = "L'Historique est vide";
+      main.appendChild(emptyArrayWitness);
     }
     letters.map((letter) => {
       // Letter Card Left
@@ -30,7 +37,7 @@ function generateDOMElements(letters: Letter[]): void {
       entityInfos.innerHTML = `
         <h3 class="sender-name">${letter.sender_name}</h3>
         <h3 class="receiver-name">${letter.receiver_name}</h3>
-      `; // mauvaise casse
+      `;
       const letterObject: HTMLElement = document.createElement("div");
       letterObject.classList.add("letter-object");
       letterObject.innerHTML = `
