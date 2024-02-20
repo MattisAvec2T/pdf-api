@@ -29,7 +29,7 @@ npm i
 
 Le fichier `.env` des 2 parties du projet sont déjà configuré pour un lancement mais libre à vous de les modifier.
 
-### Lancement du serveur
+### Lancement des serveurs
 
 Dans un premier Terminal : (Lancement de l'API)
 
