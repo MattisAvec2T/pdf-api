@@ -48,8 +48,8 @@ npm run start
 ## Technologies utilisées
 
 - Typescript
-- Node/Express
-(- Librairie PDFKit)
+- Node/Express  
+- (Librairie PDFKit)
 - PostgreSQL (Hébergé donc le projet nécessite une connexion internet)
 
 ## Auteur
